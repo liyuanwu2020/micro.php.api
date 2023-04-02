@@ -1,0 +1,13 @@
+{
+    "require": {
+        "monolog/monolog": "^3.3",
+        "ext-yaf": "*",
+        "ext-yar": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "core\\": "../core/"
+        },
+        "files": ["../tools/functions.php"]
+    }
+}
