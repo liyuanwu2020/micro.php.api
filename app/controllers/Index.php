@@ -16,7 +16,7 @@ class API {
     }
 }
 
-class IndexController extends  \Yaf_Controller_Abstract {
+class IndexController extends  \Mszlu\Tools\CYafSimpleController {
 
 
     //保存一条配置,预测有请求. 创建配置-请求任务
@@ -28,7 +28,9 @@ class IndexController extends  \Yaf_Controller_Abstract {
 
     public function demoAction()
     {
-        echo camelize("you_and_me");
+//        echo camelize("you_and_me");
+        var_dump($this->getQuery());
+        var_dump(\Mszlu\Tools\readableBytes(12214));
     }
 
 }

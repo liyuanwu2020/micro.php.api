@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c34cc4d0bb7b0cd066455ce1cb3c7e7d",
+    "content-hash": "0508d0357638808148d1d53f2362d9fa",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -108,6 +108,43 @@
             "time": "2023-02-06T13:46:10+00:00"
         },
         {
+            "name": "mszlu/tools",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liyuanwu2020/micro.php.tools.git",
+                "reference": "5faa06d397035971088eb9678d25450f1e014f8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liyuanwu2020/micro.php.tools/zipball/5faa06d397035971088eb9678d25450f1e014f8a",
+                "reference": "5faa06d397035971088eb9678d25450f1e014f8a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-yaf": "^3.3"
+            },
+            "type": "composer",
+            "autoload": {
+                "psr-4": {
+                    "Mszlu\\Tools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "liyuanwu",
+                    "email": "16619891743@163.com"
+                }
+            ],
+            "description": "Simple packaging of common tools",
+            "support": {
+                "issues": "https://github.com/liyuanwu2020/micro.php.tools/issues",
+                "source": "https://github.com/liyuanwu2020/micro.php.tools/tree/v1.0.0"
+            },
+            "time": "2023-04-02T01:33:03+00:00"
+        },
+        {
             "name": "psr/log",
             "version": "3.0.0",
             "source": {
@@ -165,7 +202,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-yaf": "*"
+        "ext-yaf": "*",
+        "ext-yar": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"

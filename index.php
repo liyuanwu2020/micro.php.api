@@ -30,9 +30,10 @@ try {
         ->bootstrap() //Bootstrap, 也叫做引导程序. 它是Yaf提供的一个全局配置的入口, 在Bootstrap中, 你可以做很多全局自定义的工作.
         ->run();
 } catch (Yaf_Exception_StartupError | Yaf_Exception_TypeError $e) {
-    echo $e->getMessage();
+    throw $e;
 } catch (Exception $e) {
-    echo "未捕获的异常" . $e->getMessage();
+    throw $e;
+
 }
 
 
