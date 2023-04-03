@@ -109,28 +109,35 @@
         },
         {
             "name": "mszlu/tools",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liyuanwu2020/micro.php.tools.git",
-                "reference": "5faa06d397035971088eb9678d25450f1e014f8a"
+                "reference": "839ceb651429b332c2cae0916bec45769e922574"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liyuanwu2020/micro.php.tools/zipball/5faa06d397035971088eb9678d25450f1e014f8a",
-                "reference": "5faa06d397035971088eb9678d25450f1e014f8a",
+                "url": "https://api.github.com/repos/liyuanwu2020/micro.php.tools/zipball/839ceb651429b332c2cae0916bec45769e922574",
+                "reference": "839ceb651429b332c2cae0916bec45769e922574",
                 "shasum": ""
             },
             "require": {
-                "ext-yaf": "^3.3"
+                "ext-yaf": "^3.3",
+                "php": "^8.1"
             },
-            "type": "composer",
+            "type": "library",
             "autoload": {
+                "files": [
+                    "functions.php"
+                ],
                 "psr-4": {
                     "Mszlu\\Tools\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
                     "name": "liyuanwu",
@@ -140,9 +147,9 @@
             "description": "Simple packaging of common tools",
             "support": {
                 "issues": "https://github.com/liyuanwu2020/micro.php.tools/issues",
-                "source": "https://github.com/liyuanwu2020/micro.php.tools/tree/v1.0.0"
+                "source": "https://github.com/liyuanwu2020/micro.php.tools/tree/v1.0.1"
             },
-            "time": "2023-04-02T01:33:03+00:00"
+            "time": "2023-04-03T08:49:58+00:00"
         },
         {
             "name": "psr/log",
