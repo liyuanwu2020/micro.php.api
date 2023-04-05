@@ -3,11 +3,17 @@
         "monolog/monolog": "^3.3",
         "ext-yaf": "*",
         "ext-yar": "*",
-        "mszlu/tools": "^1.0"
+        "mszlu/tools": "^1.0",
+        "grpc/grpc": "^1.52",
+        "google/protobuf": "^3.22",
+        "ext-grpc": "*"
     },
     "autoload": {
         "psr-4": {
-            "core\\": "../core/"
+            "core\\": "../core/",
+            "GPBMetadata\\":"test/GPBMetadata/",
+            "Helloworld\\":"test/Helloworld/",
+            "Pb\\":"test/Pb/"
         }
     }
 }

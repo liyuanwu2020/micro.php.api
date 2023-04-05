@@ -1,5 +1,7 @@
 <?php
 
+use Mszlu\Tools\YafSimpleController;
+
 class API {
     /**
      * the doc info will be generated automatically into service info page.
@@ -16,7 +18,7 @@ class API {
     }
 }
 
-class IndexController extends  \Mszlu\Tools\CYafSimpleController {
+class IndexController extends  YafSimpleController {
 
 
     //保存一条配置,预测有请求. 创建配置-请求任务
@@ -29,8 +31,10 @@ class IndexController extends  \Mszlu\Tools\CYafSimpleController {
     public function demoAction()
     {
 //        echo camelize("you_and_me");
-        var_dump($this->getQuery());
-        var_dump(\Mszlu\Tools\readableBytes(12214));
+//        var_dump($this->getQuery());
+//        var_dump(\Mszlu\Tools\readableBytes(12214));
+//        phpinfo();
+
     }
 
 }
