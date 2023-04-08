@@ -6,14 +6,18 @@
         "mszlu/tools": "^1.0",
         "grpc/grpc": "^1.52",
         "google/protobuf": "^3.22",
-        "ext-grpc": "*"
+        "ext-grpc": "*",
+        "mszlu/pb": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "core\\": "../core/",
-            "GPBMetadata\\":"test/GPBMetadata/",
-            "Helloworld\\":"test/Helloworld/",
-            "Pb\\":"test/Pb/"
+            "core\\": "../core/"
+        }
+    },
+    "repositories": {
+        "private-packagist": {
+            "type": "composer",
+            "url": "https://repo.packagist.com/mszlu-timer/"
         }
     }
 }
