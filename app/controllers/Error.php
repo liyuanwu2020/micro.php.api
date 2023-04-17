@@ -11,25 +11,7 @@ class ErrorController extends \Yaf_Controller_Abstract
     public function errorAction()
     {
         $exception = $this->getRequest()->getException();
-
-        var_dump($exception);
-//        try {
-//            throw $exception;
-//        } catch (\Yaf_Exception_LoadFailed | \Yaf_Exception_LoadFailed_View $e) {
-//            //加载失败
-//            $message = '加载失败:';
-//        } catch (\Yaf_Exception $e) {
-//            //其他错误
-//            $message = '框架错误:';
-//        } catch (Exception|Error $e) {
-//            $message = '业务错误:';
-//        } finally {
-//            ob_end_clean();
-//            print_r($e);
-//
-////            $this->assign('message', );
-////            $this->display('error');
-//        }
+            throw $exception;
     }
 
 //    public function assign($name, $value = null)

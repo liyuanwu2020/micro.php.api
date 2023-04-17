@@ -17,23 +17,20 @@
 
 define("APP_PATH",  realpath(dirname(__FILE__))); /* 指向public的上一级 */
 require_once APP_PATH . '/vendor/autoload.php';
+@ini_set("display_errors", 0);
 
 //setcookie('XDEBUG_SESSION', 'PHPSTORM');
+ini_set("yar.debug", "On");
 
-try {
-    $config = new Yaf_Config_Ini(APP_PATH . "/conf/application.ini", YAF_ENVIRON);
-    $app = new Yaf_Application($config->toArray());
-    //关闭视图
-    Yaf_Dispatcher::getInstance()->autoRender(false);
+$config = new Yaf_Config_Ini(APP_PATH . "/conf/application.ini", YAF_ENVIRON);
+$app = new Yaf_Application($config->toArray());
+//关闭视图
+Yaf_Dispatcher::getInstance()->autoRender(false);
 //    session_set_save_handler(new \lib\session\DbSessionHandler(), true);
-    $app
-        ->bootstrap() //Bootstrap, 也叫做引导程序. 它是Yaf提供的一个全局配置的入口, 在Bootstrap中, 你可以做很多全局自定义的工作.
-        ->run();
-} catch (Yaf_Exception_StartupError | Yaf_Exception_TypeError $e) {
-    throw $e;
-} catch (Exception $e) {
-    throw $e;
+$app
+->bootstrap() //Bootstrap, 也叫做引导程序. 它是Yaf提供的一个全局配置的入口, 在Bootstrap中, 你可以做很多全局自定义的工作.
+->run();
 
-}
+
 
 

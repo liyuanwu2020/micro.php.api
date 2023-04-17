@@ -4,19 +4,28 @@ use Mszlu\Pb\User\UserRequest;
 use Mszlu\Pb\User\UserResponse;
 use Mszlu\Pb\User\UserServiceClient;
 
-class API {
-    /**
-     * the doc info will be generated automatically into service info page.
-     * @params
-     * @param $parameter
-     * @param string $option
-     * @return void
-     */
-    public function some_method($parameter, string $option = "foo"): void
-    {
-    }
 
-    protected function client_can_not_see() {
+
+interface Middleware {
+    public function run();
+}
+
+class Engine
+{
+    private array $middlewares = [];
+}
+
+class MiddlewareFunc
+{
+    public function methodHandler(Middleware $next): MiddlewareFunc
+    {
+        //todo
+
+        //执行业务
+        $next->run();
+
+        //todo
+        return $this;
     }
 }
 
@@ -26,26 +35,19 @@ class IndexController extends  \Mszlu\Tools\YafSimpleController {
     //保存一条配置,预测有请求. 创建配置-请求任务
     public function indexAction() {//默认Action
 
-        $service = new Yar_Server(new API());
-        $service->handle();
-    }
+//        phpinfo();
+        $host = "http://localhost:9000/api/index/";
+        $client = new Yar_Client($host);
+        $result = $client->call("some_method", ["1"]);
+        var_dump($result);
+        var_dump("hello");
+//        echo camelize("you_and_me");
+//        var_dump(readableBytes(12214));
 
-    public function serverAction()
-    {
-        //        server demo
-        $port = 9112;
-        $server = new \Grpc\RpcServer([]);
-        $server->addHttp2Port('0.0.0.0:'.$port);
-        $server->handle(new \core\service\user\UserBasicInfo());
-        echo 'Listening on port :' . $port . PHP_EOL;
-        $server->run();
     }
 
     public function demoAction()
     {
-//        echo camelize("you_and_me");
-//        var_dump(readableBytes(12214));
-
         $request = new UserRequest();
         $request->setId([1, 2, 3]);
         $bin = $request->serializeToString();
