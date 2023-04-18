@@ -13,6 +13,19 @@ interface Middleware {
 class Engine
 {
     private array $middlewares = [];
+
+    /**
+     * @param array $middlewares
+     */
+    public function setMiddlewares(array $middlewares): void
+    {
+        $this->middlewares = $middlewares;
+    }
+
+    public function run()
+    {
+
+    }
 }
 
 class MiddlewareFunc
@@ -36,14 +49,27 @@ class IndexController extends  \Mszlu\Tools\YafSimpleController {
     public function indexAction() {//默认Action
 
 //        phpinfo();
-        $host = "http://localhost:9000/api/index/";
-        $client = new Yar_Client($host);
-        $result = $client->call("some_method", ["1"]);
-        var_dump($result);
-        var_dump("hello");
-//        echo camelize("you_and_me");
-//        var_dump(readableBytes(12214));
+        $host = "http://localhost:9000/server";
+//        $client = new Yar_Client($host);
+//        $result = $client->call("some_method", [1]);
+//        var_dump($result);
+//        var_dump(PHP_SAPI);
+//        define('STDOUT', fopen('php://stdout', 'w'));
+//        fwrite(STDOUT, "我是通过STDOUT写入；\n");
+//
+//        $stdout = fopen("php://stdout", "w");
+//        fwrite($stdout, "我是通过php://stdout写入；\n");
 
+        Yar_Concurrent_Client::call($host, "some_method", ["xiaoming"], function ($retval, $callinfo) {
+            var_dump($retval);
+            var_dump($callinfo);
+//            fwrite(STDOUT, "Yar_Concurrent_Client写入；\n");
+        });
+        Yar_Concurrent_Client::loop(function ($retval, $callinfo) {
+            var_dump("loop");
+        });
+        echo "end";
+//        fclose($stdout);
     }
 
     public function demoAction()

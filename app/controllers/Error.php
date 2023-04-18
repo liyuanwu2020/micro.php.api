@@ -11,16 +11,7 @@ class ErrorController extends \Yaf_Controller_Abstract
     public function errorAction()
     {
         $exception = $this->getRequest()->getException();
-            throw $exception;
+        throw $exception;
     }
 
-//    public function assign($name, $value = null)
-//    {
-//        $loop = is_array($name) ? $name : [$name => $value];
-//
-//        foreach ($loop as $k => $v) {
-//            $this->getView()->assign($k, $v);
-//        }
-//
-//    }
 }

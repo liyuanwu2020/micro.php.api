@@ -15,12 +15,12 @@
     YAF_ERR_TYPE_ERROR(Yaf\ERR\TYPE_ERROR)	Yaf的错误代码常量, 表示关键逻辑的参数错误, 值为521
 */
 
-define("APP_PATH",  realpath(dirname(__FILE__))); /* 指向public的上一级 */
+define("APP_PATH",  realpath(dirname(__FILE__)));
 require_once APP_PATH . '/vendor/autoload.php';
-@ini_set("display_errors", 0);
+
 
 //setcookie('XDEBUG_SESSION', 'PHPSTORM');
-ini_set("yar.debug", "On");
+//ini_set("yar.debug", "On");
 
 $config = new Yaf_Config_Ini(APP_PATH . "/conf/application.ini", YAF_ENVIRON);
 $app = new Yaf_Application($config->toArray());
