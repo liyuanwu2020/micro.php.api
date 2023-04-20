@@ -42,9 +42,22 @@ class MiddlewareFunc
     }
 }
 
+class User extends \Mszlu\Tools\Entity
+{
+
+    public mixed $id;
+}
+
 class IndexController extends  \Mszlu\Tools\YafSimpleController {
 
 
+    public function demoAction()
+    {
+        $user = new User(['id' => 1001, 'age' => 20]);
+        var_dump($user->id);
+        var_dump($msg = $user->encode());
+        var_dump($user::decode($msg)->toArray());
+    }
     //保存一条配置,预测有请求. 创建配置-请求任务
     public function indexAction() {//默认Action
 
@@ -72,7 +85,7 @@ class IndexController extends  \Mszlu\Tools\YafSimpleController {
 //        fclose($stdout);
     }
 
-    public function demoAction()
+    public function demo2Action()
     {
         $request = new UserRequest();
         $request->setId([1, 2, 3]);
